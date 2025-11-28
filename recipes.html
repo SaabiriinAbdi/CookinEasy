@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Recipes | Cookin' Easy</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="recipe-page.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+  <!-- ================= HEADER ================= -->
+<header class="navbar" role="banner">
+  <!-- Logo -->
+  <div class="logo">
+    <a href="#" aria-label="Cookin' Easy home">
+      <svg xmlns="http://www.w3.org/2000/svg" height="32" width="36" viewBox="0 0 576 512" aria-hidden="true">
+        <path d="M240 144a96 96 0 1 0 -192 0 96 96 0 1 0 192 0zm44.4 32C269.9 240.1 212.5 288 144 288 64.5 288 0 223.5 0 144S64.5 0 144 0c68.5 0 125.9 47.9 140.4 112l71.8 0c8.8-9.8 21.6-16 35.8-16l104 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-104 0c-14.2 0-27-6.2-35.8-16l-71.8 0zM144 80a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM400 240c13.3 0 24 10.7 24 24l0 8 96 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-240 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l96 0 0-8c0-13.3 10.7-24 24-24zM288 464l0-112 224 0 0 112c0 26.5-21.5 48-48 48l-128 0c-26.5 0-48-21.5-48-48zM48 320l128 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-16 0c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-80c0-8.8 7.2-16 16-16zm128 64c8.8 0 16-7.2 16-16s-7.2-16-16-16l-16 0 0 32 16 0zM24 464l176 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L24 512c-13.3 0-24-10.7-24-24s10.7 24 24 24z"/>
+      </svg>
+      <span class="brand">Cookin' Easy</span>
+    </a>
+  </div>
+
+<!--================== 1 OF 2 ADD YOUR PAGES LINK HERE !!!!!!=====================-->
+  <nav class="nav-desktop" aria-label="Primary">
+    <ul class="nav-links" aria-label="Mobile primary">
+      <li><a href="#">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="#">Favorite</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search -->
+  <div class="container-input" role="search">
+    <input id="navSearchInput" class="input" type="search" placeholder="Search recipes" aria-label="Search recipes" />
+    <div id="navSuggestions" class="suggestions" aria-hidden="true"></div>
+    <svg width="20" height="20" viewBox="0 0 1920 1920" aria-hidden="true" focusable="false">
+      <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
+    </svg>
+  </div>
+
+  <!-- Hamburger for small screens -->
+  <div class="nav-actions">
+    <button id="navHamburger" class="hamburger" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" type="button">
+      <span class="hamburger-box" aria-hidden="true"><span class="hamburger-inner"></span></span>
+    </button>
+  </div>
+
+  <!-- Overlay for dismissing mobile menu -->
+  <div id="mobileOverlay" class="mobile-overlay" hidden aria-hidden="true"></div>
+
+  <!-- Mobile menu panel -->
+  <div id="mobileMenu" class="mobile-menu" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <button id="mobileClose" class="mobile-close" aria-label="Close menu" type="button">&times;</button>
+
+      <div class="mobile-brand" style="display:flex; align-items:center; gap:0.5rem; padding:0.25rem 0;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" width="32" viewBox="0 0 576 512" aria-hidden="true" focusable="false" style="fill:currentColor;">
+          <path d="M240 144a96 96 0 1 0 -192 0 96 96 0 1 0 192 0zm44.4 32C269.9 240.1 212.5 288 144 288 64.5 288 0 223.5 0 144S64.5 0 144 0c68.5 0 125.9 47.9 140.4 112l71.8 0c8.8-9.8 21.6-16 35.8-16l104 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-104 0c-14.2 0-27-6.2-35.8-16l-71.8 0zM144 80a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM400 240c13.3 0 24 10.7 24 24l0 8 96 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-240 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l96 0 0-8c0-13.3 10.7-24 24-24zM288 464l0-112 224 0 0 112c0 26.5-21.5 48-48 48l-128 0c-26.5 0-48-21.5-48-48zM48 320l128 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-16 0c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-80c0-8.8 7.2-16 16-16zm128 64c8.8 0 16-7.2 16-16s-7.2-16-16-16l-16 0 0 32 16 0zM24 464l176 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L24 512c-13.3 0-24-10.7-24-24s10.7 24 24 24z"/>
+        </svg>
+        <span class="brand">Cookin' Easy</span>
+      </div>
+
+<!--================== 2 OF 2 ADD YOUR PAGES LINK HERE !!!!!!=====================-->
+      <nav aria-label="Mobile primary">
+        <ul class="mobile-links" role="menu" aria-label="Mobile menu">
+          <li role="none"><a role="menuitem" href="#">Home</a></li>
+          <li role="none"><a role="menuitem" href="recipes.html">Recipes</a></li>
+          <li role="none"><a role="menuitem" href="#">Favorite</a></li>
+          <li role="none"><a role="menuitem" href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- ================= MAIN ================= -->
+  <main>
+  <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Ready to cook up something delicious?</h1>
+          <p>Or get a random recipe from our collection!</p>
+
+          <div class="hero-actions">
+
+            <!--Search Form-->
+            <form class="hero-search" role="search" aria-label="Recipe search">
+              <input 
+                type="text" 
+                id="hero-search-input" 
+                name="q" 
+                placeholder="Type a recipe..." 
+                aria-required="true"
+              />
+              <div id="heroSuggestions" class="suggestions"></div>
+              <button type="submit">Search</button>
+            </form>
+            
+            <!--Surprise Me Button-->
+            <button id="surprise-btn">
+            <span>Surprise Me!</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path d="M321.5 68.8C329.1 55.9 342.9 48 357.8 48l2.2 0c22.1 0 40 17.9 40 40s-17.9 40-40 40l-73.3 0 34.8-59.2zm-131 0l34.8 59.2-73.3 0c-22.1 0-40-17.9-40-40s17.9-40 40-40l2.2 0c14.9 0 28.8 7.9 36.3 20.8zm89.6-24.3l-24.1 41-24.1-41C215.7 16.9 186.1 0 154.2 0L152 0c-48.6 0-88 39.4-88 88 0 14.4 3.5 28 9.6 40L32 128c-17.7 0-32 14.3-32 32l0 32c0 17.7 14.3 32 32 32l448 0c17.7 0 32-14.3 32-32l0-32c0-17.7-14.3-32-32-32l-41.6 0c6.1-12 9.6-25.6 9.6-40 0-48.6-39.4-88-88-88l-2.2 0c-31.9 0-61.5 16.9-77.7 44.4zM480 272l-200 0 0 208 136 0c35.3 0 64-28.7 64-64l0-144zm-248 0l-200 0 0 144c0 35.3 28.7 64 64 64l136 0 0-208z"/>
+              </svg>
+            </button>
+        </div>
+    </section>
+    
+    <!-- Recipe Filter -->
+    <section class="recipe-filter" id="recipe-section">
+      <h2>Scroll, select, and savor — your next meal awaits.</h2>
+
+      <div class="filter-group">
+        <h4>Meal Type</h4>
+        <div id="mealFilters" class="chip-row" role="list" aria-label="Meal type filters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Protein</h4>
+        <div id="proteinFilters" class="chip-row" role="list" aria-label="Protein filters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Dietary Preferences</h4>
+        <div id="dietFilters" class="chip-row" role="list" aria-label="Diet filters"></div>
+      </div>
+    </section>
+
+    <!--MATCH ALL DIETARY TAGS IF NEEDED-->
+      <div class="filter-controls">
+        <div class="match-all-wrap" role="group" aria-label="Dietary match mode">
+          <button id="dietMatchToggle" class="match-toggle" aria-pressed="false" aria-label="Match all dietary tags">
+            <span class="toggle-knob" aria-hidden="true"></span>
+          </button>
+          <div class="match-text">
+            <div class="match-title">Match all dietary tags</div>
+            <div class="match-sub">Require every selected tag</div>
+          </div>
+        </div>
+
+        <div class="controls-right">
+          <button id="clearFilters" class="btn btn-secondary" type="button" aria-label="Clear all filters">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span class="visually-hidden">Clear All</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="activeFilters" class="active-filters" aria-live="polite"></div>
+      <div id="resultsCount" class="results-count" aria-live="polite"></div>
+    </section>
+
+      <!-- Recipe Gallery -->
+    <section class="recipe-grid" id="recipeGrid">
+      <!-- Recipe cards will be dynamically inserted here by JS-->
+    </section>  
+   
+      <!-- Recipe Detail Modal -->
+      <div id="recipeModal" class="modal hidden">
+        <div class="modal-content">
+          <!-- Close Button -->
+          <button id="closeModal" class="close-btn">&times;</button>
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2 id="detailTitle"></h2>
+          <div class="modal-header-actions">
+            <button id="modalFavoriteBtn" class="modal-favorite-btn" aria-label="Add to favorites">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+        </div>
+
+          <!-- Image -->
+          <img id="detailImage" alt="" />
+          
+          <!-- Print Button under image -->
+          <div class="modal-print">
+            <button id="modalPrintBtn" class="modal-print-btn" type="button">
+              <i class="fa-solid fa-print"></i> Print Recipe
+            </button>
+          </div>
+          <!-- Meta Info -->
+          <div class="modal-meta">
+            <span><i class="fa-regular fa-clock"></i> Prep: <span id="prepTime">—</span></span>         
+            <span><i class="fa-solid fa-fire"></i> Cook: <span id="cookTime">—</span></span>         
+            <span><i class="fa-solid fa-utensils"></i> Serves: <span id="servings">—</span></span>
+            <span><i class="fa-solid fa-burn"></i> Kcal: <span id="kcal">—</span></span> 
+          </div>
+
+          <!-- Grid Layout -->
+          <div class="modal-layout">
+            <div class="description">
+              <h3>Description</h3>
+              <p id="detailDescription"></p>
+            </div>
+            <div class="ingredients">
+              <h3>Ingredients</h3>
+              <ul id="detailIngredients"></ul>
+            </div>
+
+            <div class="instructions">
+              <h3>Instructions</h3>
+              <ul id="detailInstructions" class="instruction-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>&copy; 2025 Cookin' Easy. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
