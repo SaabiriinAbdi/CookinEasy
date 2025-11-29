@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites - Cookin' Easy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="favorites.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <span class="star-icon">★</span>
+            <span class="logo-text">Favorites</span>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-active">All</a>
+            <a href="#">Breakfast</a>
+            <a href="#">Lunch</a>
+            <a href="#">Dinner</a>
+        </nav>
+        
+        <div class="container-input" role="search">
+            <input id="favSearchInput" class="input" type="search" placeholder="Search recipes" aria-label="Search recipes" />
+            <button class="search-btn" id="search-button">Search</button>
+        </div>
+    </header>
+
+    <main class="favorites-container">
+        <div id="recipe-cards-container" class="recipe-grid">
+            </div>
+
+        <div class="pagination">
+        </div>
+    </main>
+
+    <script src="favorites.js"></script>
+</body>
+</html>
