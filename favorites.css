@@ -1,0 +1,200 @@
+/* --- Global Styles (for consistency across pages) --- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9; /* Light background */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff; /* White header background */
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.star-icon {
+    /* Styles for the star/flower icon in the mockup */
+    font-size: 30px;
+    color: #ff9900; /* Example color, adjust to match flower */
+    margin-right: 10px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: #ff9900;
+}
+
+/* Style for the active navigation link */
+.main-nav a.nav-active {
+    color: #ff9900;
+    font-weight: bold;
+    /* Optional: Add a subtle underline */
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 2px;
+}
+
+/* NEW: Styles copied from recipes-page.css for the header search bar */
+.container-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    /* Allows the input to grow and button to stay fixed */
+    max-width: 300px; 
+}
+
+.container-input .input {
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+    /* Reset background and borders to match the parent container */
+    background: transparent;
+}
+
+.search-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    /* Removed border-radius here since it's on the container */
+    border-radius: 0;
+    height: 100%;
+    transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+    background-color: #333;
+}
+
+/* --- Favorites Page Specific Styles --- */
+
+.favorites-container {
+    padding: 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-grid {
+    display: grid;
+    /* Create a responsive grid with 3 columns, adapting on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.recipe-card-link {
+    text-decoration: none; /* Add this to remove underline from linked cards */
+    color: inherit;
+}
+
+.recipe-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 250px; /* Consistent image height */
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.recipe-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+/* --- Pagination Styles --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #555;
+    margin: 0 8px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.pagination a.active,
+.pagination a:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+.pagination a.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none; /* Prevents clicks entirely */
+    color: #555;
+    font-weight: normal;
+}
+
+/* Media Query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .main-nav {
+        margin: 15px 0;
+    }
+
+    .main-nav a {
+        margin: 0 10px;
+    }
+
+    .favorites-container {
+        padding: 20px;
+    }
+    
+    .container-input {
+        width: 100%;
+        max-width: 100%; /* Allows it to take full width on small screens */
+    }
+    .container-input .input {
+        width: 100%;
+    }
+}
