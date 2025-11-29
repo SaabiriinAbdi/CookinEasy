@@ -1,0 +1,23 @@
+
+.about-img {
+    max-width:350px;
+    float:left;
+}
+
+body {
+    
+   align-items: center;
+   justify-content: center;
+    
+    
+}
+
+.AUcontainer{
+    margin: 100px auto;
+    width: 75%
+    
+}
+
+.about-section {
+    width: 90%;
+}
