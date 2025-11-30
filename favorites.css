@@ -1,77 +1,39 @@
-/* --- Global Styles (for consistency across pages) --- */
-
+/* Global page styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f9f9f9; /* Light background */
+    background-color: #f9f9f9; /* Light background for the page */
 }
 
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #fff; /* White header background */
-    border-bottom: 1px solid #eee;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
+/* Main page title styling */
+.favorites-container h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
     color: #333;
 }
 
-.star-icon {
-    /* Styles for the star/flower icon in the mockup */
-    font-size: 30px;
-    color: #ff9900; /* Example color, adjust to match flower */
-    margin-right: 10px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #555;
-    margin: 0 15px;
-    font-size: 16px;
-    transition: color 0.2s;
-}
-
-.main-nav a:hover {
-    color: #ff9900;
-}
-
-/* Style for the active navigation link */
-.main-nav a.nav-active {
-    color: #ff9900;
-    font-weight: bold;
-    /* Optional: Add a subtle underline */
-    border-bottom: 2px solid #ff9900;
-    padding-bottom: 2px;
-}
-
-/* NEW: Styles copied from recipes-page.css for the header search bar */
+/* Search bar container styling */
 .container-input {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
-    /* Allows the input to grow and button to stay fixed */
     max-width: 300px; 
 }
 
+/* Search input field styling */
 .container-input .input {
     border: none;
     padding: 10px 15px;
     font-size: 16px;
     outline: none;
     width: 200px;
-    /* Reset background and borders to match the parent container */
     background: transparent;
 }
 
+/* Search button styling */
 .search-btn {
     background-color: #000;
     color: #fff;
@@ -79,37 +41,69 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    /* Removed border-radius here since it's on the container */
     border-radius: 0;
     height: 100%;
     transition: background-color 0.2s;
 }
 
+/* Search button hover effect */
 .search-btn:hover {
     background-color: #333;
 }
 
-/* --- Favorites Page Specific Styles --- */
+/* Meal type filter navigation styling */
+.main-nav-filters {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    gap: 20px;
+    font-size: 1.1rem;
+    margin-top: 20px; /* Space from header */
+}
 
+/* Meal filter link styling */
+.main-nav-filters a {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+/* Meal filter hover effect */
+.main-nav-filters a:hover {
+    color: #ff9900;
+}
+
+/* Active meal filter styling */
+.main-nav-filters a.nav-active {
+    color: #ff9900;
+    font-weight: bold;
+    border-bottom: 2px solid #ff9900;
+}
+
+/* Main favorites container */
 .favorites-container {
     padding: 40px 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Recipe grid layout */
 .recipe-grid {
     display: grid;
-    /* Create a responsive grid with 3 columns, adapting on smaller screens */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
+/* Recipe card link styling */
 .recipe-card-link {
-    text-decoration: none; /* Add this to remove underline from linked cards */
+    text-decoration: none;
     color: inherit;
 }
 
+/* Individual recipe card styling */
 .recipe-card {
     background-color: #fff;
     border-radius: 8px;
@@ -118,30 +112,34 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Recipe card hover effects */
 .recipe-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Recipe image styling */
 .recipe-card img {
     width: 100%;
-    height: 250px; /* Consistent image height */
+    height: 250px;
     object-fit: cover;
     display: block;
 }
 
+/* Recipe information section */
 .recipe-info {
     padding: 15px;
     text-align: center;
 }
 
+/* Recipe title styling */
 .recipe-info h3 {
     margin: 10px 0;
     font-size: 20px;
     color: #333;
 }
 
-/* --- Pagination Styles --- */
+/* Pagination container */
 .pagination {
     display: flex;
     justify-content: center;
@@ -149,6 +147,7 @@ body {
     font-size: 18px;
 }
 
+/* Pagination link styling */
 .pagination a {
     text-decoration: none;
     color: #555;
@@ -157,42 +156,31 @@ body {
     border-radius: 4px;
 }
 
+/* Active and hover pagination states */
 .pagination a.active,
 .pagination a:hover {
     color: #000;
     font-weight: bold;
 }
 
+/* Disabled pagination link styling */
 .pagination a.disabled {
     opacity: 0.4;
     cursor: not-allowed;
-    pointer-events: none; /* Prevents clicks entirely */
+    pointer-events: none;
     color: #555;
     font-weight: normal;
 }
 
-/* Media Query for smaller screens (e.g., mobile) */
+/* Mobile responsive styles */
 @media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
-
-    .main-nav {
-        margin: 15px 0;
-    }
-
-    .main-nav a {
-        margin: 0 10px;
-    }
-
     .favorites-container {
         padding: 20px;
     }
     
     .container-input {
         width: 100%;
-        max-width: 100%; /* Allows it to take full width on small screens */
+        max-width: 100%; 
     }
     .container-input .input {
         width: 100%;
