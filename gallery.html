@@ -1,0 +1,165 @@
+<!--Gallery Template Courtesy of W3Schools-->
+<!--https://www.w3schools.com/howto/howto_css_image_gallery.asp-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+  border: 2px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 2px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+  margin-top: 10px;
+}
+
+h2 {
+    padding: 0px 6px;
+}
+
+.home {
+    padding: 5px 6px;
+    margin-bottom:15px;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    font-weight:700;
+    color:black;
+    width: 10%;
+    background-color: rgb(211, 211, 211);
+}
+
+.home:hover {
+    background-color: rgb(169, 169, 169);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Cookn' Easy's Gallery</h2>
+
+<a class="home" href="AboutUs.html">Back to About Us!</a>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/1.jpg">
+      <img src="pictures/1.jpg" alt="Man folding an egg on a skillet" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/rock.jpg">
+      <img src="pictures/rock.jpg" alt="The Rock Johnson with a plate of pancakes" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/2.jpg">
+      <img src="pictures/2.jpg" alt="Wife taste testing husband's food" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/3.jpg">
+      <img src="pictures/3.jpg" alt="Father overlooking son chopping tomatoes" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/4.jpg">
+      <img src="pictures/4.jpg" alt="Two white cats awaiting their meal" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/5.jpg">
+      <img src="pictures/5.jpg" alt="Chef showcasing his plating skills" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/6.jpg">
+      <img src="pictures/6.jpg" alt="Family cooking together" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="pictures/7.jpg">
+      <img src="pictures/7.jpg" alt="Gordon Ramsey showing off his plate" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<footer>
+    <p>&copy; 2025 Cookin' Easy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
