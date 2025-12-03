@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="home-page.css">
     <link rel="stylesheet" href="recipes-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page | Cookin' Easy</title>
@@ -18,7 +19,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" height="32" width="36" viewBox="0 0 576 512" aria-hidden="true">
         <path d="M240 144a96 96 0 1 0 -192 0 96 96 0 1 0 192 0zm44.4 32C269.9 240.1 212.5 288 144 288 64.5 288 0 223.5 0 144S64.5 0 144 0c68.5 0 125.9 47.9 140.4 112l71.8 0c8.8-9.8 21.6-16 35.8-16l104 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-104 0c-14.2 0-27-6.2-35.8-16l-71.8 0zM144 80a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM400 240c13.3 0 24 10.7 24 24l0 8 96 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-240 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l96 0 0-8c0-13.3 10.7-24 24-24zM288 464l0-112 224 0 0 112c0 26.5-21.5 48-48 48l-128 0c-26.5 0-48-21.5-48-48zM48 320l128 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-16 0c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-80c0-8.8 7.2-16 16-16zm128 64c8.8 0 16-7.2 16-16s-7.2-16-16-16l-16 0 0 32 16 0zM24 464l176 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L24 512c-13.3 0-24-10.7-24-24s10.7 24 24 24z"/>
       </svg>
-      <span class="brand">Cookin' Easy</span>
+      <span class="brand" href="home-page.html">Cookin' Easy</span>
     </a>
   </div>
 
@@ -77,12 +78,13 @@
 </header>
 
   <h1 class="attention">Flavor of The Season</h1>
-  <a href="recipes.html" class="main-link">
+  <a class="main-link" onclick="showRecipeDetail(9)">
   <img src = "pictures/pumpkin_pie.jpg" 
   alt="Pumpkin Pie" class="Main_img"> </a>  
 
+
   <!------------------------------------------------------------Categories------------------------------------------------------------>
-  <h3>Browse by Category</h3>
+  <h3 class="line-break">Browse by Category</h3>
   <section class= "categories">
     
     <div class="top-recipe-section">
@@ -109,7 +111,7 @@
   </section>
   
   <!------------------------------------------------------------Da Recipes------------------------------------------------------------>
-  <h3>What's Trending</h3>
+  <h3 class="line-break">What's Trending</h3>
 
   <section class="recipes">
 
@@ -117,25 +119,25 @@
       <div class="recipe_card">
         <img src="pictures/beefstew.jpg" alt="Beef Stew" class="card-image">
         <h2>Beef Stew</h2>
-        <a href="recipes.html">View Recipe</a>
+        <a class="recipe-view" onclick="showRecipeDetail(2)">View Recipe</a>
         </div>
-  
+        
       <div class="recipe_card">
         <img src="pictures/caprese-salad.jpg" alt="caprese-salad" class="card-image">
         <h2>Caprese Salad</h2>
-        <a href="recipes.html">View Recipe</a>
+        <a class="recipe-view" onclick="showRecipeDetail(4)">View Recipe</a>
         </div>
   
       <div class="recipe_card">
         <img src="pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg" alt="Fluffy Pancakes" class="card-image">
         <h2>Fluffy Pancakes</h2>
-        <a href="recipes.html">View Recipe</a>
+        <a class="recipe-view" onclick="showRecipeDetail(0)">View Recipe</a>
         </div>
     </div>  
   
 </section>
 
-<h3>Keep Yourself Warm</h3>
+<h3 class="line-break">Keep Yourself Warm</h3>
 
 <section class="recipes">
 
@@ -143,19 +145,19 @@
       <div class="recipe_card">
         <img src="pictures/Beef-wellington.jpg" alt="Beef Wellington" class="card-image">
         <h2>Beef Wellington</h2>
-        <a href="recipes.html">View Recipe</a>
+        <a class="recipe-view" onclick="showRecipeDetail(5)">View Recipe</a>
         </div>
   
       <div class="recipe_card">
-        <img src="pictures/thai-chicken.jpg" alt="Thai-Chicken Salad" class="card-image">
-        <h2>Thai Chicken Salad</h2>
-        <a href="recipes.html">View Recipe</a>
+        <img src="pictures/thai-chicken.jpg" alt="Thai-Noodle Salad" class="card-image">
+        <h2>Thai Noodle Salad</h2>
+        <a class="recipe-view" onclick="showRecipeDetail(6)">View Recipe</a>
         </div>
   
       <div class="recipe_card">
         <img src="pictures/Vegetable_lasagna.jpg" alt="Vegetable Lasagna" class="card-image">
         <h2>Vegtable Lasagna</h2>
-        <a href="recipes.html">View Recipe</a>
+        <a class="recipe-view" onclick="showRecipeDetail(3)">View Recipe</a>
         </div>
     </div>  
   
@@ -166,6 +168,59 @@
   <a href="recipes.html" class="recipe-button" style="display: inline-block;">Click Here!</a>
 </div>  
 
+<!-- ================= RECIPE MODAL ================= -->
+<div id="recipeModal" class="modal hidden">
+  <div class="modal-content">
+      <!-- Close Button -->
+      <button id="closeModal" class="close-btn">&times;</button>
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+          <h2 id="detailTitle"></h2>
+          <div class="modal-header-actions">
+              <button id="modalFavoriteBtn" class="modal-favorite-btn" aria-label="Add to favorites">
+                  <i class="fa-regular fa-heart"></i>
+              </button>
+          </div>
+      </div>
+
+      <!-- Image -->
+      <img id="detailImage" alt="" />
+      
+      <!-- Print Button under image -->
+      <div class="modal-print">
+          <button id="modalPrintBtn" class="modal-print-btn" type="button">
+              <i class="fa-solid fa-print"></i> Print Recipe
+          </button>
+      </div>
+      
+      <!-- Meta Info -->
+      <div class="modal-meta">
+          <span><i class="fa-regular fa-clock"></i> Prep: <span id="prepTime">—</span></span>         
+          <span><i class="fa-solid fa-fire"></i> Cook: <span id="cookTime">—</span></span>         
+          <span><i class="fa-solid fa-utensils"></i> Serves: <span id="servings">—</span></span>
+          <span><i class="fa-solid fa-burn"></i> Kcal: <span id="kcal">—</span></span> 
+      </div>
+
+      <!-- Grid Layout -->
+      <div class="modal-layout">
+          <div class="description">
+              <h3>Description</h3>
+              <p id="detailDescription"></p>
+          </div>
+          <div class="ingredients">
+              <h3>Ingredients</h3>
+              <ul id="detailIngredients"></ul>
+          </div>
+
+          <div class="instructions">
+              <h3>Instructions</h3>
+              <ul id="detailInstructions" class="instruction-list"></ul>
+          </div>
+      </div>
+  </div>
+</div>
+
 <!-- ================= FOOTER ================= -->
   <footer>
     <p>&copy; 2025 Cookin' Easy. All rights reserved.</p>
@@ -173,6 +228,7 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <script src="favorites.js"></script>
 
 </body>
 </html>
