@@ -1,29 +1,78 @@
-/* Global page styling */
+/* favorites.css - Styles specific to the Favorites page */
+
+/* Reset any conflicting styles - use the same as other pages */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f9f9f9; /* Light background for the page */
+    background-color: #f9f9f9;
 }
 
-/* Main page title styling */
-.favorites-container h2 {
-    font-size: 2.5rem;
-    margin-top: 0;
+/* Make sure header inherits styles from home-page.css */
+.navbar {
+    /* Let home-page.css handle navbar styling */
     margin-bottom: 20px;
-    color: #333;
 }
 
-/* Search bar container styling */
+/* Main favorites container - adjusted to match other pages */
+.favorites-container {
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Page title styling to match other pages */
+.favorites-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0 30px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Meal type filter navigation - match recipe-page.css styling */
+.main-nav-filters {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    gap: 30px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav-filters a {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 10px;
+    transition: color 0.2s;
+    font-weight: 600;
+}
+
+.main-nav-filters a:hover {
+    color: #ff9900;
+}
+
+.main-nav-filters a.nav-active {
+    color: #ff9900;
+    font-weight: bold;
+    border-bottom: 2px solid #ff9900;
+}
+
+/* Search bar styling to match other pages */
 .container-input {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     overflow: hidden;
-    max-width: 300px; 
+    max-width: 300px;
+    background: white;
 }
 
-/* Search input field styling */
 .container-input .input {
     border: none;
     padding: 10px 15px;
@@ -33,7 +82,6 @@ body {
     background: transparent;
 }
 
-/* Search button styling */
 .search-btn {
     background-color: #000;
     color: #fff;
@@ -46,143 +94,184 @@ body {
     transition: background-color 0.2s;
 }
 
-/* Search button hover effect */
 .search-btn:hover {
     background-color: #333;
 }
 
-/* Meal type filter navigation styling */
-.main-nav-filters {
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    gap: 20px;
-    font-size: 1.1rem;
-    margin-top: 20px; /* Space from header */
-}
-
-/* Meal filter link styling */
-.main-nav-filters a {
-    text-decoration: none;
-    color: #555;
-    padding: 5px 0;
-    transition: color 0.2s;
-}
-
-/* Meal filter hover effect */
-.main-nav-filters a:hover {
-    color: #ff9900;
-}
-
-/* Active meal filter styling */
-.main-nav-filters a.nav-active {
-    color: #ff9900;
-    font-weight: bold;
-    border-bottom: 2px solid #ff9900;
-}
-
-/* Main favorites container */
-.favorites-container {
-    padding: 40px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Recipe grid layout */
+/* Recipe grid - match recipe-page.css grid styling */
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-/* Recipe card link styling */
-.recipe-card-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Individual recipe card styling */
+/* Recipe card styling to match other pages */
 .recipe-card {
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
 }
 
-/* Recipe card hover effects */
+/* Make clickable recipes show pointer cursor */
+.recipe-card.clickable-recipe {
+    cursor: pointer;
+}
+
 .recipe-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Recipe image styling */
 .recipe-card img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     display: block;
 }
 
-/* Recipe information section */
 .recipe-info {
     padding: 15px;
     text-align: center;
 }
 
-/* Recipe title styling */
 .recipe-info h3 {
     margin: 10px 0;
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
+    font-weight: 600;
 }
 
-/* Pagination container */
+/* Meal type label styling */
+.recipe-info .meal-type {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Pagination styling to match other pages */
 .pagination {
     display: flex;
     justify-content: center;
     margin-top: 40px;
-    font-size: 18px;
+    font-size: 16px;
+    gap: 5px;
 }
 
-/* Pagination link styling */
 .pagination a {
     text-decoration: none;
     color: #555;
-    margin: 0 8px;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: all 0.2s;
 }
 
-/* Active and hover pagination states */
 .pagination a.active,
 .pagination a:hover {
     color: #000;
     font-weight: bold;
+    background-color: #f5f5f5;
 }
 
-/* Disabled pagination link styling */
 .pagination a.disabled {
     opacity: 0.4;
     cursor: not-allowed;
     pointer-events: none;
-    color: #555;
+    color: #999;
     font-weight: normal;
+}
+
+/* Modal styles - these come from script.js/recipe-page.css but we need basics */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
 }
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
     .favorites-container {
-        padding: 20px;
+        padding: 15px;
+    }
+    
+    .main-nav-filters {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
     }
     
     .container-input {
         width: 100%;
-        max-width: 100%; 
+        max-width: 100%;
+        margin: 10px auto;
     }
+    
     .container-input .input {
         width: 100%;
+    }
+    
+    .recipe-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .favorites-container {
+        padding: 10px;
+    }
+    
+    .favorites-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .main-nav-filters {
+        font-size: 0.9rem;
+        gap: 10px;
+    }
+    
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
     }
 }
