@@ -256,6 +256,7 @@ const recipes = [
     title: "Classic Pumpkin Pie",
     description: "A creamy, spiced pumpkin pie baked in a flaky crust — perfect for autumn gatherings.",
     image: "pictures/pumpkin-pie.jpg", 
+    mealType: "Dessert",
     prepTime: "20 mins",
     cookTime: "55 mins",
     servings: "8",
@@ -286,6 +287,7 @@ const recipes = [
   title: "Fudgy Brownies",
   description: "Rich, chocolatey brownies with a crackly top and gooey center.",
   image: "pictures/brownies.jpg",
+  mealType: "Dessert",
   prepTime: "15 mins",
   cookTime: "30 mins",
   servings: "12",
@@ -315,6 +317,7 @@ const recipes = [
   title: "Chocolate Chip Cookies",
   description: "Classic chewy cookies loaded with melty chocolate chips.",
   image: "pictures/chocolate-chip.jpg",
+  mealType: "Dessert",
   prepTime: "20 mins",
   cookTime: "10 mins",
   servings: "24",
@@ -1267,6 +1270,7 @@ hamburger.addEventListener('click', () => {
 
 overlay.addEventListener('click', closeMenu);
 closeBtn.addEventListener('click', closeMenu);
+
 
 
 
