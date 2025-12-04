@@ -2,7 +2,7 @@
 const recipes = [
   {
     title: "Fluffy Pancakes",
-    image: "pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg",
     mealType: "Breakfast",
     prepTime: "10 mins",
     cookTime: "20 mins",
@@ -29,7 +29,7 @@ const recipes = [
   },
   {
     title: "Avocado Toast",
-    image: "pictures/avocado.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/avocado.jpg",
     mealType: "Breakfast",
     prepTime: "5 mins",
     cookTime: "10 mins",
@@ -53,7 +53,7 @@ const recipes = [
   },
   {
     title: "Slow Cooker Beef Bourguignon",
-    image: "pictures/beefstew.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/beefstew.jpg",
     mealType: "Dinner",
     prepTime: "30 mins",
     cookTime: "9 hours",
@@ -82,7 +82,7 @@ const recipes = [
   },
   {
     title: "Vegetarian Lasagna",
-    image: "pictures/Vegetable_lasagna.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/Vegetable_lasagna.jpg",
     mealType: "Dinner",
     prepTime: "20 mins",
     cookTime: "1 hour",
@@ -110,7 +110,7 @@ const recipes = [
   },
   {
     title: "Caprese Salad",
-    image: "pictures/caprese-salad.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/caprese-salad.jpg",
     mealType: "Lunch",
     prepTime: "5 mins",
     cookTime: "10 mins",
@@ -137,7 +137,7 @@ const recipes = [
   },
   {
     title: "Beef Wellington",
-    image: "pictures/Beef-wellington.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/Beef-wellington.jpg",
     mealType: "Dinner",
     prepTime: "45 mins",
     cookTime: "2 hours",
@@ -164,7 +164,7 @@ const recipes = [
   },
   {
     title: "Thai Noodle Salad",
-    image: "pictures/thai-chicken.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/thai-chicken.jpg",
     mealType: "Lunch",
     prepTime: "15 mins",
     cookTime: "25 mins",
@@ -197,7 +197,7 @@ const recipes = [
   },
   {
   title: "Matzo Ball Soup",
-  image: "pictures/matzo-ball.jpg",
+  image: "vedad-b/CS444-Recipe-Website/pictures/matzo-ball.jpg",
   mealType: "Dinner",
   prepTime: "20 mins",
   cookTime: "1 hour",
@@ -224,7 +224,7 @@ const recipes = [
 },
 {
   title: "Chicken Akni",
-  image: "pictures/anki-rice.jpg",
+  image: "vedad-b/CS444-Recipe-Website/pictures/anki-rice.jpg",
   mealType: "Dinner",
   prepTime: "20 mins",
   cookTime: "1 hour",
@@ -255,7 +255,7 @@ const recipes = [
     id: "pumpkin-pie",
     title: "Classic Pumpkin Pie",
     description: "A creamy, spiced pumpkin pie baked in a flaky crust — perfect for autumn gatherings.",
-    image: "pictures/pumpkin-pie.jpg", 
+    image: "vedad-b/CS444-Recipe-Website/pictures/pumpkin-pie.jpg", 
     prepTime: "20 mins",
     cookTime: "55 mins",
     servings: "8",
@@ -285,7 +285,7 @@ const recipes = [
   id: "brownies",
   title: "Fudgy Brownies",
   description: "Rich, chocolatey brownies with a crackly top and gooey center.",
-  image: "pictures/brownies.jpg",
+  image: "vedad-b/CS444-Recipe-Website/pictures/brownies.jpg",
   prepTime: "15 mins",
   cookTime: "30 mins",
   servings: "12",
@@ -314,7 +314,7 @@ const recipes = [
   id: "chocolate-chip-cookies",
   title: "Chocolate Chip Cookies",
   description: "Classic chewy cookies loaded with melty chocolate chips.",
-  image: "pictures/chocolate-chip.jpg",
+  image: "vedad-b/CS444-Recipe-Website/pictures/chocolate-chip.jpg",
   prepTime: "20 mins",
   cookTime: "10 mins",
   servings: "24",
@@ -400,7 +400,10 @@ function createRecipeCard(recipe, index) {
 // renderGrid uses the module-level gridRef by default
 function renderGrid(list, container = gridRef) {
   if (!container) return;
-  container.innerHTML = list.map((r, i) => createRecipeCard(r, i)).join("");
+  container.innerHTML = list.map(r => {
+    const originalIndex = recipes.indexOf(r);
+    return createRecipeCard(r, originalIndex);
+  }).join("");
 }
 
 // ================== Favorite toggle (local favorites) ==================
@@ -498,13 +501,13 @@ function attachChipListeners() {
     mealRow.querySelectorAll(".chip").forEach(btn => {
       btn.onclick = () => {
         const label = btn.dataset.label;
-        if (label === "All") {
-          activeMeals = new Set(["All"]);
-        } else {
-          activeMeals.delete("All");
-          if (activeMeals.has(label)) activeMeals.delete(label); else activeMeals.add(label);
-          if (activeMeals.size === 0) activeMeals.add("All");
-        }
+          if (label === "All") {
+            activeMeals = new Set(["All"]);
+          } else {
+            activeMeals.delete("All");
+            if (activeMeals.has(label)) activeMeals.delete(label); else activeMeals.add(label);
+            if (activeMeals.size === 0) activeMeals.add("All");
+          }
         saveFilters();
         renderChips();
         applyFilters();
@@ -553,6 +556,7 @@ function computeFilteredRecipes() {
   const meals = activeMeals.has("All") ? null : Array.from(activeMeals);
   const dietsArr = Array.from(activeDiets);
   const matchAll = isMatchAll();
+  
 
   return recipes.filter(r => {
     const mealOk = !meals || meals.includes(r.mealType);
@@ -672,7 +676,7 @@ function showRecipeDetail(index) {
   if (imgEl) { imgEl.src = recipe.image || ''; imgEl.alt = recipe.title || ''; }
   if (descEl) descEl.textContent = recipe.description || '';
 
-  if (prepEl) prepEl.textContent = recipe.cookTime || '';
+  if (prepEl) prepEl.textContent = recipe.prepTime || '';
   if (cookEl) cookEl.textContent = recipe.cookTime || '';
   if (servingsEl) servingsEl.textContent = recipe.servings || '';
   if (kcalEl) kcalEl.textContent = recipe.kcal || '';
@@ -892,6 +896,8 @@ function normalizeFractionString(q) {
 
   return s;
 }
+
+
 
 // initialize ingredient list interactions (lightweight, delegated)
 function initIngredientInteractions(container) {
