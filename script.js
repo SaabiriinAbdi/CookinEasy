@@ -2,7 +2,7 @@
 const recipes = [
   {
     title: "Fluffy Pancakes",
-    image: "vedad-b/CS444-Recipe-Website/pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg",
+    image: "pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg",
     mealType: "Breakfast",
     prepTime: "10 mins",
     cookTime: "20 mins",
@@ -29,7 +29,7 @@ const recipes = [
   },
   {
     title: "Avocado Toast",
-    image: "vedad-b/CS444-Recipe-Website/pictures/avocado.jpg",
+    image: "pictures/avocado.jpg",
     mealType: "Breakfast",
     prepTime: "5 mins",
     cookTime: "10 mins",
@@ -53,7 +53,7 @@ const recipes = [
   },
   {
     title: "Slow Cooker Beef Bourguignon",
-    image: "vedad-b/CS444-Recipe-Website/pictures/beefstew.jpg",
+    image: "pictures/beefstew.jpg",
     mealType: "Dinner",
     prepTime: "30 mins",
     cookTime: "9 hours",
@@ -82,7 +82,7 @@ const recipes = [
   },
   {
     title: "Vegetarian Lasagna",
-    image: "vedad-b/CS444-Recipe-Website/pictures/Vegetable_lasagna.jpg",
+    image: "pictures/Vegetable_lasagna.jpg",
     mealType: "Dinner",
     prepTime: "20 mins",
     cookTime: "1 hour",
@@ -110,7 +110,7 @@ const recipes = [
   },
   {
     title: "Caprese Salad",
-    image: "vedad-b/CS444-Recipe-Website/pictures/caprese-salad.jpg",
+    image: "pictures/caprese-salad.jpg",
     mealType: "Lunch",
     prepTime: "5 mins",
     cookTime: "10 mins",
@@ -137,7 +137,7 @@ const recipes = [
   },
   {
     title: "Beef Wellington",
-    image: "vedad-b/CS444-Recipe-Website/pictures/Beef-wellington.jpg",
+    image: "pictures/Beef-wellington.jpg",
     mealType: "Dinner",
     prepTime: "45 mins",
     cookTime: "2 hours",
@@ -164,7 +164,7 @@ const recipes = [
   },
   {
     title: "Thai Noodle Salad",
-    image: "vedad-b/CS444-Recipe-Website/pictures/thai-chicken.jpg",
+    image: "pictures/thai-chicken.jpg",
     mealType: "Lunch",
     prepTime: "15 mins",
     cookTime: "25 mins",
@@ -197,7 +197,7 @@ const recipes = [
   },
   {
   title: "Matzo Ball Soup",
-  image: "vedad-b/CS444-Recipe-Website/pictures/matzo-ball.jpg",
+  image: "pictures/matzo-ball.jpg",
   mealType: "Dinner",
   prepTime: "20 mins",
   cookTime: "1 hour",
@@ -224,7 +224,7 @@ const recipes = [
 },
 {
   title: "Chicken Akni",
-  image: "vedad-b/CS444-Recipe-Website/pictures/anki-rice.jpg",
+  image: "pictures/anki-rice.jpg",
   mealType: "Dinner",
   prepTime: "20 mins",
   cookTime: "1 hour",
@@ -255,7 +255,7 @@ const recipes = [
     id: "pumpkin-pie",
     title: "Classic Pumpkin Pie",
     description: "A creamy, spiced pumpkin pie baked in a flaky crust — perfect for autumn gatherings.",
-    image: "vedad-b/CS444-Recipe-Website/pictures/pumpkin-pie.jpg", 
+    image: "pictures/pumpkin-pie.jpg", 
     prepTime: "20 mins",
     cookTime: "55 mins",
     servings: "8",
@@ -285,7 +285,7 @@ const recipes = [
   id: "brownies",
   title: "Fudgy Brownies",
   description: "Rich, chocolatey brownies with a crackly top and gooey center.",
-  image: "vedad-b/CS444-Recipe-Website/pictures/brownies.jpg",
+  image: "pictures/brownies.jpg",
   prepTime: "15 mins",
   cookTime: "30 mins",
   servings: "12",
@@ -314,7 +314,7 @@ const recipes = [
   id: "chocolate-chip-cookies",
   title: "Chocolate Chip Cookies",
   description: "Classic chewy cookies loaded with melty chocolate chips.",
-  image: "vedad-b/CS444-Recipe-Website/pictures/chocolate-chip.jpg",
+  image: "pictures/chocolate-chip.jpg",
   prepTime: "20 mins",
   cookTime: "10 mins",
   servings: "24",
@@ -1267,6 +1267,7 @@ hamburger.addEventListener('click', () => {
 
 overlay.addEventListener('click', closeMenu);
 closeBtn.addEventListener('click', closeMenu);
+
 
 
 
